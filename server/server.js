@@ -53,5 +53,9 @@ await connectDB();
 //   key: process.env.CLOUDINARY_API_KEY ? '***' + process.env.CLOUDINARY_API_KEY.slice(-3) : 'MISSING',
 //   secret: process.env.CLOUDINARY_API_SECRET ? '***' + process.env.CLOUDINARY_API_SECRET.slice(-3) : 'MISSING'
 // });
+if(process.env.NODE_ENV !== "production"){
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => console.log("Server is running on Port: " + PORT));
+}
+//for vercel
+export default server;
